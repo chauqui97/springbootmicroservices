@@ -1,0 +1,42 @@
+version: '3.7'
+
+services:
+
+#  redis:
+#    image: redis:alpine
+#    ports:
+#      - "6379:6379"
+#    restart: unless-stopped
+#    tty: true
+
+  rabbitmq:
+    image: rabbitmq:management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    tty:
+      true
+
+#  mongo:
+#    image: mongo:4.4.3
+#    ports:
+#      - "27017:27017"
+#    restart: unless-stopped
+#    tty: true
+#    volumes:
+#      - db-data:/mongo
+#  db:
+#    image: mysql:8.0
+#    ports:
+#      - "3306:3306"
+#    restart: unless-stopped
+#    tty: true
+#    environment:
+#      MYSQL_DATABASE: onetwothreemart
+#      MYSQL_USER: onetwothreemart
+#      MYSQL_PASSWORD: ZCJmkW6olq
+#      MYSQL_ROOT_PASSWORD: root
+#    volumes:
+#      - db-data:/var/lib/mysql
+volumes:
+  db-data:
